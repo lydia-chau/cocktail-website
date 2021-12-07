@@ -1,0 +1,32 @@
+.drink-details *{
+    font-size:20px;
+}
+
+.random-cocktail{
+    display:flex;
+    justify-content: space-evenly;
+    margin:100px;
+}
+
+.cocktail-image{
+    height:30%;
+    width:30%;
+}
+
+.drink-details{
+    display:flex;
+    justify-content: center;
+    /* border-style: solid; */
+    /* background-color: rgb(231, 188, 188); */
+}
+
+.instructions{
+    margin:16px;
+    flex-wrap:wrap;
+    width:50%;
+    text-align: left;
+}
+
+.close-icon{
+    float:right;
+}

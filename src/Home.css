@@ -1,6 +1,7 @@
-/* html *{
-  background-color:rgb(110, 44, 44);
+html *{
+  /* background-color:rgb(110, 44, 44); */
   background-color: white;
+  color:black;
   font-family: 'Playfair Display', serif;
 }
 
@@ -9,16 +10,36 @@
   margin-top:50px;
 }
 
+.App-header{
+  text-align:center;
+}
+
+.generate-button{
+  height:100px;
+  width:100px;
+  border-radius: 50px;
+  border-style:none;
+  background-color: burlywood;
+}
+
+
+.generate-button:hover{
+  background-color:rgb(95, 37, 51);
+  color:white;
+  cursor: pointer;
+  transition:ease-in 0.3s;
+}
+
 .alcohols{
   margin-left:112px;
   margin-right:112px;
   position:relative;
   margin-top:100px;
   display:grid;
-  width:1150px;
+  /* width:1150px; */
   height:450px;
-  border-style:solid;
-  border-color: black;
+  /* border-style:solid;
+  border-color: black; */
   grid-template-columns: repeat(5,230px);
   grid-template-rows: repeat(3, 150px);
   grid-template-areas:  'a a c c c'
@@ -29,8 +50,6 @@
 .alcohols a{
   background-color: transparent;
   color:rgb(56, 21, 21);
-  border-style:solid;
-  border-color:black;
 }
 
 .alcohols a:hover {
@@ -44,22 +63,25 @@
   grid-area: a;
   font-size:150px;
   font-weight:900;
-
+  text-decoration: none !important;
 }
 
 .Gin{
   font-size:115px;
   grid-area: b;
   font-weight:400;
+  text-decoration: none !important;
 }
 
 .Tequila{
-  position:absolute;
+  /* position:absolute; */
   font-size:140px;
   letter-spacing: 0.2em;
   font-weight: 400;
   text-align:right;
   grid-area: c;
+  text-decoration: none !important;
+
 }
 
 .Whiskey{
@@ -68,17 +90,21 @@
   font-size:120px;
   font-weight: 700;
   letter-spacing: 0.4em;
+  text-decoration: none !important;
+
 }
 
 .Brandy{
   position:absolute;
   bottom:-15px;
-  left:70px;
+  /* left:70px; */
   grid-area: e;
   font-size:165px;
   font-weight: 400;
   font-style:italic;
   letter-spacing: 0.4em;
+  text-decoration: none !important;
+
 }
 
 .Rum{
@@ -91,8 +117,10 @@
   writing-mode: vertical-rl;
   text-orientation: upright;
   text-align: center;
+  text-decoration: none !important;
+
 }
 
 .text{
   word-spacing:2em;
-} */
+}

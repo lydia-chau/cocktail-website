@@ -1,0 +1,22 @@
+.popup-box{
+    border-style:solid;
+    color:black;
+    /* font-size:100px; */
+    position:fixed;
+    left:48%;
+    bottom:10%;
+    width:50%;
+    height:80%;
+}
+
+.popup-header{
+    height:20%;
+    font-size:50px;
+    white-space: pre-line;
+    padding:10px;
+    text-align:center;
+}
+
+.close-icon:hover{
+    cursor:pointer;
+}
