@@ -1,7 +1,7 @@
 html *{
   /* background-color:rgb(110, 44, 44); */
-  background-color: white;
-  color:black;
+  background-color: #3B0D11;
+  color:white;
   font-family: 'Playfair Display', serif;
 }
 
@@ -12,29 +12,49 @@ html *{
 
 .App-header{
   text-align:center;
+  position: relative;
+
+}
+
+.what-drink-header{
+  font-weight:700;
+  font-style:italic;
+  position:absolute;
+  width:100%;
+  left:0;
+  background-color: transparent;
+}
+
+.cocktail-homepage-image{
+  height:30%;
+  width:30%;
+  border-radius:50px;
 }
 
 .generate-button{
   height:100px;
   width:100px;
   border-radius: 50px;
+  font-weight:700;
+  font-style:italic;
   border-style:none;
-  background-color: burlywood;
+  background-color: #F1EDEE;
+  color:black
 }
 
 
 .generate-button:hover{
-  background-color:rgb(95, 37, 51);
+  background-color:#8AA29E;
   color:white;
   cursor: pointer;
-  transition:ease-in 0.3s;
+  transition:ease-out 300ms;
 }
 
 .alcohols{
   margin-left:112px;
   margin-right:112px;
   position:relative;
-  margin-top:100px;
+  margin-top:50px;
   display:grid;
   /* width:1150px; */
   height:450px;
@@ -49,11 +69,11 @@ html *{
 
 .alcohols a{
   background-color: transparent;
-  color:rgb(56, 21, 21);
+  color:#94504C;
 }
 
 .alcohols a:hover {
-  color:burlywood;
+  color:#ffd8d6;
   cursor:pointer;
   transform: scale(1.1);
   transition: ease-in 0.2s;

@@ -9,7 +9,7 @@
 .cocktail-name{
     display:block;
     text-decoration: none !important;
-    color:rgba(0, 0, 0, 0.151);
+    color:#94504C;
     /* color:rgb(56, 21, 21) */
 }
 
@@ -17,9 +17,11 @@
     text-align: left;
     padding-left:20px;
     font-size: 80px;
+    font-style:italic;
 }
 
 .cocktail-name:hover{
     cursor:pointer;
-    color:black;
+    color:#ffd8d6;
+    transition: ease-out 300ms;
 }

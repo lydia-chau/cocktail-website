@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useCallback } from "react";
 import CocktailDetails from './CocktailDetails.js'
 import Axios from "axios";
+import cocktailImage from './cocktail-homepage.jpg';
 import './Home.css'
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
       <div className="App">
         <div className="body">
           <header className="App-header">
-            <h1>What drink will you have today?</h1>
+            <h1 className='what-drink-header'>What drink will you have today?</h1>
+            <img className='cocktail-homepage-image' src={cocktailImage}></img>
+            <br />
             <button className="generate-button" onClick={getCocktail}>
               Generate Random Cocktail
             </button>

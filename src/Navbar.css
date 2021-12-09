@@ -6,15 +6,15 @@
     display:flex;
     justify-content: space-between;
     align-items:center;
-    
+    background-color: transparent;
 }
 
 .nav-head{
     font-size:35px;
     padding-left:15px;
     text-decoration: none;
-    color:black;
-
+    color:white;
+    background-color: transparent;
 }
 
 .nav-items{
@@ -26,21 +26,22 @@
     justify-content: end;
     align-items: center;
     padding-right: 15px;
+    background-color: transparent;
 }
 
 .nav-links{
-    color: rgb(158, 157, 157);
+    color: white;
     display: inline-block;
     text-decoration: none;
 }
 
 .nav-links:hover{
-    color: black;
-    transition: all 0.8s ease-out;
+    color: #94504C;
+    transition: all 200ms ease-out;
 }
 
 .active{
-    color:black;
+    color:#94504C;
 }
 
 .a-block{
