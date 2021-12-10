@@ -13,15 +13,19 @@ html *{
 .App-header{
   text-align:center;
   position: relative;
+  margin:50px;
+  margin-bottom: 70px;
 
 }
 
 .what-drink-header{
   font-weight:700;
+  font-size: 64px;
   font-style:italic;
   position:absolute;
   width:100%;
   left:0;
+  top:45%;
   background-color: transparent;
 }
 
@@ -32,6 +36,14 @@ html *{
 }
 
 .generate-button{
+  position: absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  top:90%;
+  /* width:100%;
+  left:50%;
+  top:90%; */
   height:100px;
   width:100px;
   border-radius: 50px;
@@ -47,14 +59,13 @@ html *{
   background-color:#8AA29E;
   color:white;
   cursor: pointer;
-  transition:ease-out 300ms;
+  transition:ease-out 200ms;
 }
 
 .alcohols{
   margin-left:112px;
   margin-right:112px;
   position:relative;
-  margin-top:50px;
   display:grid;
   /* width:1150px; */
   height:450px;

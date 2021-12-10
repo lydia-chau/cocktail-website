@@ -22,13 +22,18 @@ export default function Home() {
       <div className="App">
         <div className="body">
           <header className="App-header">
+          
             <h1 className='what-drink-header'>What drink will you have today?</h1>
+            
             <img className='cocktail-homepage-image' src={cocktailImage}></img>
+            
             <br />
             <button className="generate-button" onClick={getCocktail}>
               Generate Random Cocktail
             </button>
-            {cocktail && !randomHidden &&
+          </header>
+
+          {cocktail && !randomHidden &&
               <div className='random-cocktail'>
               <img alt='cocktail' className ='cocktail-image' src={cocktail.strDrinkThumb}></img>
               <div>
@@ -36,7 +41,6 @@ export default function Home() {
               </div>
                 </div>
             }
-          </header>
           
 
           <div className="alcohols">

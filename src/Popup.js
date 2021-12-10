@@ -17,10 +17,10 @@ export default function Popup(props) {
     return (
         <div className='popup-box'>
           
-            <CloseIcon className='close-icon' onClick={()=>props.setHidden(true)}/>
+            <CloseIcon className='close-icon-popup' onClick={()=>props.setHidden(true)}/>
             
             <div className='popup-header'>{props.cocktail}</div>
-            <RandomCocktail cocktail={cocktailDetails} homepage={false}/>
+            <RandomCocktail cocktail={cocktailDetails} homepage={false} popup={true}/>
         </div>
     )
 }

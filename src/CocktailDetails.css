@@ -1,5 +1,11 @@
 .drink-details *{
     font-size:20px;
+    background-color: transparent;
+
+}
+
+.cocktail-detail-name{
+    text-align: center;
 }
 
 .random-cocktail{
@@ -15,20 +21,38 @@
 
 .drink-details{
     display:flex;
+    flex-direction: column;
     justify-content: center;
     /* border-style: solid; */
     /* background-color: rgb(231, 188, 188); */
     background-color: transparent;
+    margin:50px;
+    
+}
+
+.drink-details-popup{
+    display:flex;
+    flex-direction: column;
+    font-size:20px;
+    background-color: transparent;
+    margin:50px;
+    overflow-y: scroll;
+    position: absolute;
+    height: 65%;
+}
+
+.drink-ingredients{
+    background-color: transparent;
 }
 
 .instructions{
-    margin:16px;
     flex-wrap:wrap;
-    width:50%;
     text-align: left;
     background-color: transparent;
 }
 
 .close-icon{
     float:right;
+    background-color: transparent;
+
 }

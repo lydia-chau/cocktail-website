@@ -74,7 +74,7 @@ export default function RandomCocktail(props) {
                 )} */}
 
                 {/* {location.state.homepage && <h1>{cocktail.strDrink}</h1>} */}
-                <h1>{cocktail.strDrink}</h1>
+                <h1 className='cocktail-detail-name'>{cocktail.strDrink}</h1>
 
                 <div className="drink-details">
                     <ul>

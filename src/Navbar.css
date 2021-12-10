@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items:center;
     background-color: transparent;
+    z-index: 1;
 }
 
 .nav-head{
@@ -33,6 +34,8 @@
     color: white;
     display: inline-block;
     text-decoration: none;
+    background-color: transparent;
+
 }
 
 .nav-links:hover{
@@ -56,10 +59,14 @@
     border-bottom: 2px solid rgb(158, 157, 157);
     
 }
+
 .input-bar:focus{
     outline: none;
     border-bottom: 2px solid rgb(158, 157, 157);
-    
+}
+
+.input-bar::placeholder{
+    color:white;
 }
 
 .dropdown{

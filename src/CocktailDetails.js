@@ -58,11 +58,11 @@ export default function RandomCocktail(props) {
           />
         )}
 
-        {props.homepage && <h1>{cocktail.strDrink}</h1>}
-        <div className="drink-details">
-          <ul >
+        {props.homepage && <h1 className='cocktail-detail-name'>{cocktail.strDrink}</h1>}
+        <div className={props.popup ? "drink-details-popup" : "drink-details"}>
+          <ul className='drink-ingredients'>
             {Object.keys(ingredientsObject).map((key, index) => {
-              return <li key={index}>{ingredientsObject[key] + " " + key}</li>;
+              return <li className='drink-ingredients' key={index}>{ingredientsObject[key] + " " + key}</li>;
             })}
 
             {/* <button onClick={getList}></button> */}

@@ -1,25 +1,39 @@
 .popup-box{
-    border-style:solid;
-    color:black;
-    /* font-size:100px; */
     position:fixed;
-    left:48%;
+    left:55%;
     bottom:10%;
-    width:50%;
+    width:40%;
     height:80%;
     background-color: #95404c;
+    border-radius: 50px;
 }
 
 .popup-header{
-    height:20%;
     font-size:50px;
-    white-space: pre-line;
     padding:10px;
+    padding-top:30px;
     text-align:center;
     background-color: #95404c;
+    border-radius: 50px;
 
 }
 
-.close-icon:hover{
+/* 
+.close-icon{
+    position:absolute;
+    top:5%;
+    left:85%;
+    
+} */
+
+.close-icon-popup{
+    position:absolute;
+    top:5%;
+    left:85%;
+    background-color: transparent;
+    
+}
+
+[class*="close-icon"]:hover{
     cursor:pointer;
 }
