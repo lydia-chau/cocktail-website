@@ -1,20 +1,20 @@
 .popup-box{
     position:fixed;
-    left:55%;
+    left:60%;
     bottom:10%;
-    width:40%;
+    width:35%;
     height:80%;
     background-color: #95404c;
-    border-radius: 50px;
+    border-radius: 4.86vw;
 }
 
 .popup-header{
-    font-size:50px;
-    padding:10px;
-    padding-top:30px;
+    font-size:3.47vw;
+    padding:0.69vw;
+    padding-top:3.08vw;
     text-align:center;
     background-color: #95404c;
-    border-radius: 50px;
+    border-radius: 4.86vw;
 
 }
 
@@ -28,7 +28,7 @@
 
 .close-icon-popup{
     position:absolute;
-    top:5%;
+    top:3%;
     left:85%;
     background-color: transparent;
     

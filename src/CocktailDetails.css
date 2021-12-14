@@ -46,6 +46,8 @@
 }
 
 .instructions{
+    font-weight:700;
+    font-style: italic;
     flex-wrap:wrap;
     text-align: left;
     background-color: transparent;

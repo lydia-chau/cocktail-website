@@ -67,6 +67,7 @@ export default function RandomCocktail(props) {
 
             {/* <button onClick={getList}></button> */}
           </ul>
+          <br />
           <div className="instructions">{cocktail.strInstructions}</div>
         </div>
       </>
