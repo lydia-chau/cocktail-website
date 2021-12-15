@@ -77,7 +77,7 @@ export default function RandomCocktail(props) {
                 <h1 className='cocktail-detail-name'>{cocktail.strDrink}</h1>
 
                 <div className="drink-details">
-                    <ul>
+                    <ul className='drink-ingredients'>
                     {Object.keys(ingredientsObject).map((key, index) => {
                         return (
                         <li key={index}>{ingredientsObject[key] + " " + key}</li>
@@ -85,6 +85,8 @@ export default function RandomCocktail(props) {
                     })}
 
                     </ul>
+                    <br />
+
                     <div className="instructions">{cocktail.strInstructions}</div>
                 </div>
                 </div>

@@ -47,9 +47,6 @@ export default function RandomCocktail(props) {
 
 
     return (
-      // <div className='random-cocktail'>
-      //     <img alt='cocktail' className ='cocktail-image' src={cocktail.strDrinkThumb}></img>
-      //     <div>
       <>
         {props.homepage && (
           <CloseIcon

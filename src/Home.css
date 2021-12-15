@@ -34,6 +34,8 @@ html *{
   background-color: transparent;
 }
 
+
+
 .cocktail-homepage-image{
   height:30%;
   width:30%;
@@ -42,13 +44,12 @@ html *{
 
 .generate-button{
   position: absolute;
+  top:70%;
   left:0;
   right:0;
+  margin-left:auto;
+  margin-right:auto;
   margin:0 auto;
-  top:90%;
-  /* width:100%;
-  left:50%;
-  top:90%; */
   height:100px;
   width:100px;
   height:7vw;
@@ -59,7 +60,8 @@ html *{
   font-size:1vw;
   border-style:none;
   background-color: #F1EDEE;
-  color:black
+  color:black;
+  z-index:2;
 }
 
 
@@ -164,4 +166,34 @@ html *{
 
 .text{
   word-spacing:2.22vw;
+}
+
+.random-cocktail-homepage-card{
+  /* position:absolute;
+  top:5%;
+  left:80%; */
+  height:36vw;
+  width:26.87vw;
+  border-radius:3.86vw;
+  overflow-y:scroll;
+  background-color: #94504C;
+}
+
+.random-home-div{
+  /* position:absolute; */
+  background-color: transparent;
+  z-index:1;
+  margin:2vw;
+  bottom:27%;
+  left:20%;
+}
+
+.cocktail-image-home{
+  /* position:absolute;
+  top:0;
+  left:15%; */
+  width:34.7vw;
+  height:34.7vw;
+  object-fit: cover;
+  border-radius:50%;
 }

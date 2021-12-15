@@ -17,7 +17,7 @@ export default function Home() {
           // console.log(cocktail);
         }
       );
-    }, []);
+    }, [randomHidden]);
     return (
       <div className="App">
         <div className="body">
@@ -28,18 +28,22 @@ export default function Home() {
             <img className='cocktail-homepage-image' src={cocktailImage}></img>
             
             <br />
-            <button className="generate-button" onClick={getCocktail}>
+            
+          </header>
+          <button className="generate-button" onClick={getCocktail}>
               Generate Random Cocktail
             </button>
-          </header>
 
           {cocktail && !randomHidden &&
-              <div className='random-cocktail'>
-              <img alt='cocktail' className ='cocktail-image' src={cocktail.strDrinkThumb}></img>
-              <div>
-                <CocktailDetails cocktail={cocktail} homepage={true} setRandomHidden={setRandomHidden}></CocktailDetails>
-              </div>
+              <div className='random-home-div'>
+
+                <img alt='cocktail' className ='cocktail-image-home' src={cocktail.strDrinkThumb}></img>
+
+                <div className='random-cocktail-homepage-card'>
+                  <CocktailDetails cocktail={cocktail} homepage={true} setRandomHidden={setRandomHidden}></CocktailDetails>
                 </div>
+
+              </div>
             }
           
 

@@ -6,6 +6,12 @@ import RandomCocktail from './CocktailDetails';
 
 export default function Popup(props) {
     const [cocktailDetails, setDetails]=useState([])
+    const [close, setClose]=useState(false)
+
+    function closeIconClicked(){
+        setClose(!close)
+        props.setHidden(true)
+    }
 
     useEffect(()=>{
         Axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+props.cocktail.replace(/ /g,"_")).then((response)=>{
@@ -15,9 +21,9 @@ export default function Popup(props) {
     },[props.cocktail])
 
     return (
-        <div className='popup-box'>
+        <div className={props.isHidden && close ? 'popup-box slideout hidden' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}>
           
-            <CloseIcon className='close-icon-popup' onClick={()=>props.setHidden(true)}/>
+            <CloseIcon className='close-icon-popup' onClick={()=>closeIconClicked()}/>
             
             <div className='popup-header'>{props.cocktail}</div>
             <RandomCocktail cocktail={cocktailDetails} homepage={false} popup={true}/>

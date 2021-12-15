@@ -34,7 +34,7 @@ export default function Vermouth() {
     return (
         <div>
             <h1 className='cocktail-heading'>Vermouth Cocktails</h1>
-            {!isHidden && <Popup cocktail={cocktail} setHidden={setVermouthHidden}/>}
+            <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setVermouthHidden}/>
             <ul className ='cocktail-list'>
             {sortList(vermouthList).map((item,index)=>{
                 return(
