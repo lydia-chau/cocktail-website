@@ -28,11 +28,14 @@ export default function Home() {
             <img className='cocktail-homepage-image' src={cocktailImage}></img>
             
             <br />
-            
-          </header>
-          <button className="generate-button" onClick={getCocktail}>
+            <button className="generate-button" onClick={getCocktail}>
               Generate Random Cocktail
             </button>
+            
+          </header>
+          {/* <button className="generate-button" onClick={getCocktail}>
+              Generate Random Cocktail
+            </button> */}
 
           {cocktail && !randomHidden &&
               <div className='random-home-div'>

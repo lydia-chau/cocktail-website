@@ -43,12 +43,12 @@ html *{
 }
 
 .generate-button{
-  position: absolute;
+  /* position: absolute;
   top:70%;
   left:0;
   right:0;
   margin-left:auto;
-  margin-right:auto;
+  margin-right:auto; */
   margin:0 auto;
   height:100px;
   width:100px;
