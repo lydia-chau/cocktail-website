@@ -18,9 +18,68 @@ html *{
 .App-header{
   text-align:center;
   position: relative;
-  margin:50px;
-  margin-bottom: 70px;
+  margin:3.47vw;
+  margin-bottom: 4.86vw;
 
+}
+
+.header-slide-in{
+  animation-duration: 1s;
+  animation-name: header-slide-in;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.header-slide-out{
+  animation-duration: 1s;
+  animation-name: header-slide-out;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.slide-in{
+  animation-duration: 1s;
+  animation-name: header-slide-in;
+  animation-timing-function: ease-out;
+  /* animation-delay: 2s; */
+  animation-fill-mode: backwards;
+
+}
+
+.slide-out{
+  animation-duration: 1s;
+  animation-name: header-slide-out;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes header-slide-in {
+  from{
+    opacity:50%;
+    transform: translate(-100%);        
+
+  }
+
+  to{
+    opacity:100%;
+  }
+}
+
+  @keyframes header-slide-out{
+    from{
+      opacity:100%;
+    }
+  
+    to{
+      opacity:0%;
+      transform: translate(100%); 
+    }
+  
+  
+}
+
+.hidden{
+  display:none;
 }
 
 .what-drink-header{
@@ -39,7 +98,7 @@ html *{
 .cocktail-homepage-image{
   height:30%;
   width:30%;
-  border-radius:50px;
+  border-radius:3.47vw;
 }
 
 .generate-button{
@@ -63,6 +122,7 @@ html *{
   color:black;
   z-index:2;
 }
+
 
 
 .generate-button:hover{
@@ -169,9 +229,9 @@ html *{
 }
 
 .random-cocktail-homepage-card{
-  /* position:absolute;
-  top:5%;
-  left:80%; */
+  position:absolute;
+  top:-10%;
+  left:80%;
   height:36vw;
   width:26.87vw;
   border-radius:3.86vw;
@@ -179,13 +239,17 @@ html *{
   background-color: #94504C;
 }
 
+
 .random-home-div{
-  /* position:absolute; */
+  position:absolute;
+  top:23%;
+  left:20%;
+  height:auto;
+  width:auto;
   background-color: transparent;
   z-index:1;
   margin:2vw;
-  bottom:27%;
-  left:20%;
+  
 }
 
 .cocktail-image-home{
