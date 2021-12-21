@@ -1,8 +1,8 @@
 .navbar-menu{
     position:sticky;
     top:0;
-    height:80px;
-    font-size: 20px;
+    height:5.55vw;
+    font-size: 1.38vw;
     display:flex;
     justify-content: space-between;
     align-items:center;
@@ -11,8 +11,8 @@
 }
 
 .nav-head{
-    font-size:35px;
-    padding-left:15px;
+    font-size:2.43vw;
+    padding-left:1.04vw;
     text-decoration: none;
     color:white;
     background-color: transparent;
@@ -21,7 +21,7 @@
 .nav-items{
     display:grid;
     grid-template-columns: repeat(8,auto);
-    grid-gap:10px;
+    grid-gap:0.69vw;
     list-style:none;
     text-align:center;
     justify-content: end;
@@ -56,13 +56,14 @@
     line-height:2em;
     width:100%;
     border: none;
-    border-bottom: 2px solid rgb(158, 157, 157);
+    border-bottom: 0.14vw solid rgb(158, 157, 157);
+    background-color: transparent;
     
 }
 
 .input-bar:focus{
     outline: none;
-    border-bottom: 2px solid rgb(158, 157, 157);
+    border-bottom: 0.14vw solid rgb(158, 157, 157);
 }
 
 .input-bar::placeholder{
@@ -72,15 +73,24 @@
 .dropdown{
     /* display:inline-block; */
     position:absolute;
-    border-style:solid;
+    /* border-style:solid; */
     border-width: 1px;
-    border-color:rgb(158, 157, 157);
     width:16%;
+    border-radius:1vw;
+    background-color:#94504C;
+
+    z-index:3;
+    
+
 }
 
 .dropdown-list{
+    padding:0.5vw;
+    padding-left:1vw;
     list-style: none;
     text-align:left;
+    background-color:transparent;
+
 }
 
 .dropdown-links{
@@ -90,10 +100,12 @@
     color:inherit;
     padding:0;
     cursor:pointer;
+    background-color:transparent;
 }
 
 .dropdown-links:hover{
   text-decoration: underline !important;
+
 }
 
 .search-group{
@@ -103,3 +115,44 @@
 .form-input{
     transition: ease ease-in 0.5s;
 }
+
+.input-slide-in{
+    animation-duration: 0.5s;
+    animation-name: input-slide-in;
+    animation-timing-function: ease-out;
+    /* animation-delay: 2s; */
+    animation-fill-mode: backwards;
+  
+  }
+  
+  .input-slide-out{
+    animation-duration: 0.5s;
+    animation-name: input-slide-out;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+  
+  @keyframes input-slide-in {
+    from{
+      opacity:0%;
+      transform: translate(50%);        
+  
+    }
+  
+    to{
+      opacity:100%;
+    }
+  }
+  
+    @keyframes input-slide-out{
+      from{
+        opacity:100%;
+      }
+    
+      to{
+        opacity:0%;
+        transform: translate(50%); 
+      }
+    
+    
+  }

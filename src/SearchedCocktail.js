@@ -18,8 +18,6 @@ export default function RandomCocktail(props) {
     })
 
     const portionsList=portionsKey.map((item, i, arr)=>{
-        // console.log('printing '+item);
-        // console.log(cocktail[item])
         //cocktail[strMeasure1]= 1/2 tsp something like that
             return cocktail[item];
         }
@@ -59,38 +57,45 @@ export default function RandomCocktail(props) {
 
 
     return (
-        <>
-            <button onClick={() => clickedBack() } className='back-to-search'><ArrowBackIosIcon />
-             {location.state.prevPath ==='/all' && location.state.search ?  'Search Results': 'Home' }
-            </button>
-            <div className="random-cocktail">
-                <img alt="cocktail" className="cocktail-image" src={cocktail.strDrinkThumb}></img>
-                <div>
-                {/* {location.state.homepage && (
+      <>
+        <button onClick={() => clickedBack()} className="back-to-search">
+          <ArrowBackIosIcon />
+          {location.state.prevPath === "/all" && location.state.search
+            ? "Search Results"
+            : "Home"}
+        </button>
+        <div className="random-cocktail">
+          <img
+            alt="cocktail"
+            className="cocktail-image"
+            src={cocktail.strDrinkThumb}
+          ></img>
+
+          <div className='search-card'>
+            {/* {location.state.homepage && (
                     <CloseIcon
                     className="close-icon"
                     onClick={() => props.setRandomHidden(true)}
                     />
                 )} */}
 
-                {/* {location.state.homepage && <h1>{cocktail.strDrink}</h1>} */}
-                <h1 className='cocktail-detail-name'>{cocktail.strDrink}</h1>
+            {/* {location.state.homepage && <h1>{cocktail.strDrink}</h1>} */}
+            <h1 className="cocktail-detail-name">{cocktail.strDrink}</h1>
 
-                <div className="drink-details">
-                    <ul className='drink-ingredients'>
-                    {Object.keys(ingredientsObject).map((key, index) => {
-                        return (
-                        <li key={index}>{ingredientsObject[key] + " " + key}</li>
-                        );
-                    })}
+            <div className="drink-details">
+              <ul className="drink-ingredients">
+                {Object.keys(ingredientsObject).map((key, index) => {
+                  return (
+                    <li key={index}>{ingredientsObject[key] + " " + key}</li>
+                  );
+                })}
+              </ul>
+              <br />
 
-                    </ul>
-                    <br />
-
-                    <div className="instructions">{cocktail.strInstructions}</div>
-                </div>
-                </div>
+              <div className="instructions">{cocktail.strInstructions}</div>
             </div>
-        </>
+          </div>
+        </div>
+      </>
     );
 }

@@ -103,14 +103,12 @@ html *{
 
 .generate-button{
   /* position: absolute;
-  top:70%;
+  top:45vh;
   left:0;
   right:0;
   margin-left:auto;
   margin-right:auto; */
   margin:0 auto;
-  height:100px;
-  width:100px;
   height:7vw;
   width:7vw;
   border-radius: 4vw;
@@ -123,6 +121,11 @@ html *{
   z-index:2;
 }
 
+.inside-cocktail{
+  position: absolute;
+  left: 25vw;
+  top: 29vw;
+}
 
 
 .generate-button:hover{
@@ -137,6 +140,7 @@ html *{
   /* visibility: hidden; */
   margin-left:8vw;
   margin-right:8vw;
+  
   position:relative;
   display:grid;
   /* width:1150px; */
@@ -242,13 +246,14 @@ html *{
 
 .random-home-div{
   position:absolute;
-  top:23%;
+  top:20%;
   left:20%;
   height:auto;
   width:auto;
   background-color: transparent;
   z-index:1;
   margin:2vw;
+  
   
 }
 

@@ -21,7 +21,7 @@ export default function Popup(props) {
     },[props.cocktail])
 
     return (
-        <div className={props.isHidden && close ? 'popup-box slideout hidden' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}>
+        <div className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}>
           
             <CloseIcon className='close-icon-popup' onClick={()=>closeIconClicked()}/>
             

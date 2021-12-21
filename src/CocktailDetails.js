@@ -14,8 +14,6 @@ export default function RandomCocktail(props) {
     })
 
     const portionsList=portionsKey.map((item, i, arr)=>{
-        // console.log('printing '+item);
-        // console.log(cocktail[item])
         //cocktail[strMeasure1]= 1/2 tsp something like that
             return cocktail[item];
         }

@@ -9,7 +9,7 @@
 }
 
 .hidden{
-    margin-left:100%;
+    display:none;
 }
 
 .popup-header{
@@ -55,6 +55,7 @@
   .slideout {
     animation-duration: 0.5s;
     animation-name: slideout;
+    animation-fill-mode: forwards;
     animation-timing-function: ease-in;
 
   }

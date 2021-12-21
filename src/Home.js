@@ -4,7 +4,7 @@ import CocktailDetails from './CocktailDetails.js'
 import Axios from "axios";
 import cocktailImage from './cocktail-homepage.jpg';
 import './Home.css'
-import { display } from '@mui/system';
+// import { display } from '@mui/system';
 
 export default function Home() {
     const [cocktail, setCocktail] = useState("");
@@ -27,7 +27,7 @@ export default function Home() {
           
             <h1 className='what-drink-header'>What drink will you have today?</h1>
             
-            <img className='cocktail-homepage-image' src={cocktailImage}></img>
+            <img className='cocktail-homepage-image' alt='cocktail_image' src={cocktailImage}></img>
             
             <br />
             <button className="generate-button" onClick={getCocktail}>
@@ -35,9 +35,6 @@ export default function Home() {
             </button>
             
           </header>
-          {/* <button className="generate-button" onClick={getCocktail}>
-              Generate Random Cocktail
-            </button> */}
 
           {/* {cocktail && !randomHidden && */}
               <div className={cocktail && randomHidden? 'random-home-div slide-out ': cocktail && !randomHidden? 'random-home-div slide-in': 'hidden'}>
@@ -47,6 +44,9 @@ export default function Home() {
                 <div className='random-cocktail-homepage-card'>
                     <CocktailDetails cocktail={cocktail} homepage={true} setRandomHidden={setRandomHidden}></CocktailDetails>
                 </div>
+                <button className="generate-button inside-cocktail" onClick={getCocktail}>
+                  Generate Random Cocktail
+                </button>
 
               </div>
            {/* } */}
