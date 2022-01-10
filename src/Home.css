@@ -18,9 +18,68 @@ html *{
 .App-header{
   text-align:center;
   position: relative;
-  margin:50px;
-  margin-bottom: 70px;
+  margin:3.47vw;
+  margin-bottom: 4.86vw;
 
+}
+
+.header-slide-in{
+  animation-duration: 1s;
+  animation-name: header-slide-in;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.header-slide-out{
+  animation-duration: 1s;
+  animation-name: header-slide-out;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.slide-in{
+  animation-duration: 1s;
+  animation-name: header-slide-in;
+  animation-timing-function: ease-out;
+  /* animation-delay: 2s; */
+  animation-fill-mode: backwards;
+
+}
+
+.slide-out{
+  animation-duration: 1s;
+  animation-name: header-slide-out;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes header-slide-in {
+  from{
+    opacity:50%;
+    transform: translate(-100%);        
+
+  }
+
+  to{
+    opacity:100%;
+  }
+}
+
+  @keyframes header-slide-out{
+    from{
+      opacity:100%;
+    }
+  
+    to{
+      opacity:0%;
+      transform: translate(100%); 
+    }
+  
+  
+}
+
+.hidden{
+  display:none;
 }
 
 .what-drink-header{
@@ -34,23 +93,22 @@ html *{
   background-color: transparent;
 }
 
+
+
 .cocktail-homepage-image{
   height:30%;
   width:30%;
-  border-radius:50px;
+  border-radius:3.47vw;
 }
 
 .generate-button{
-  position: absolute;
+  /* position: absolute;
+  top:45vh;
   left:0;
   right:0;
+  margin-left:auto;
+  margin-right:auto; */
   margin:0 auto;
-  top:90%;
-  /* width:100%;
-  left:50%;
-  top:90%; */
-  height:100px;
-  width:100px;
   height:7vw;
   width:7vw;
   border-radius: 4vw;
@@ -59,7 +117,14 @@ html *{
   font-size:1vw;
   border-style:none;
   background-color: #F1EDEE;
-  color:black
+  color:black;
+  z-index:2;
+}
+
+.inside-cocktail{
+  position: absolute;
+  left: 25vw;
+  top: 29vw;
 }
 
 
@@ -75,6 +140,7 @@ html *{
   /* visibility: hidden; */
   margin-left:8vw;
   margin-right:8vw;
+  
   position:relative;
   display:grid;
   /* width:1150px; */
@@ -164,4 +230,39 @@ html *{
 
 .text{
   word-spacing:2.22vw;
+}
+
+.random-cocktail-homepage-card{
+  position:absolute;
+  top:-10%;
+  left:80%;
+  height:36vw;
+  width:26.87vw;
+  border-radius:3.86vw;
+  overflow-y:scroll;
+  background-color: #94504C;
+}
+
+
+.random-home-div{
+  position:absolute;
+  top:20%;
+  left:20%;
+  height:auto;
+  width:auto;
+  background-color: transparent;
+  z-index:1;
+  margin:2vw;
+  
+  
+}
+
+.cocktail-image-home{
+  /* position:absolute;
+  top:0;
+  left:15%; */
+  width:34.7vw;
+  height:34.7vw;
+  object-fit: cover;
+  border-radius:50%;
 }

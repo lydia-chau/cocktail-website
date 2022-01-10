@@ -62,7 +62,7 @@ export default function Whiskey() {
   return (
     <div>
       <h1 className="cocktail-heading">Whiskey Cocktails</h1>
-      {!isHidden && <Popup cocktail={cocktail} setHidden={setWhiskeyHidden}/>}
+      <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setWhiskeyHidden}/>
       <ul className="cocktail-list">
         {sortList(whiskeyList).map((item, index) => {
           return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</a>;

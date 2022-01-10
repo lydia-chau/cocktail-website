@@ -94,11 +94,3 @@ export default function AllCocktails(props) {
     )
 }
 
-{/* {!location.state.search && 
-                    
-                    sortList(finalList).map((item,index)=>{
-                        return(
-                            <a href={() => false} onClick={()=>cocktailClicked()} className='cocktail-name' key={index}> {item.strDrink}</a>
-                        )
-                    })
-                } */}

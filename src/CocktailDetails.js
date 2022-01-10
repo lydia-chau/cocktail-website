@@ -14,8 +14,6 @@ export default function RandomCocktail(props) {
     })
 
     const portionsList=portionsKey.map((item, i, arr)=>{
-        // console.log('printing '+item);
-        // console.log(cocktail[item])
         //cocktail[strMeasure1]= 1/2 tsp something like that
             return cocktail[item];
         }
@@ -47,9 +45,6 @@ export default function RandomCocktail(props) {
 
 
     return (
-      // <div className='random-cocktail'>
-      //     <img alt='cocktail' className ='cocktail-image' src={cocktail.strDrinkThumb}></img>
-      //     <div>
       <>
         {props.homepage && (
           <CloseIcon
@@ -60,6 +55,13 @@ export default function RandomCocktail(props) {
 
         {props.homepage && <h1 className='cocktail-detail-name'>{cocktail.strDrink}</h1>}
         <div className={props.popup ? "drink-details-popup" : "drink-details"}>
+            {!props.homepage && <img 
+            alt='cocktail' 
+            className ='popup-image'
+            // className ='cocktail-image-home'
+            // className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}
+            src={cocktail.strDrinkThumb}></img>}
+            <br />
           <ul className='drink-ingredients'>
             {Object.keys(ingredientsObject).map((key, index) => {
               return <li className='drink-ingredients' key={index}>{ingredientsObject[key] + " " + key}</li>;

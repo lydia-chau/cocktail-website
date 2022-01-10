@@ -69,7 +69,7 @@ export default function Brandy() {
   return (
     <div>
       <h1 className="cocktail-heading">Brandy Cocktails</h1>
-      {!isHidden && <Popup cocktail={cocktail} setHidden={setBrandyHidden}/>}
+      <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setBrandyHidden}/>
       <ul className="cocktail-list">
         {sortList(brandyList).map((item, index) => {
           return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)}className='cocktail-name' key={index}> {item.strDrink}</a>;

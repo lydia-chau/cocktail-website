@@ -49,7 +49,7 @@ export default function Vodka() {
   return (
     <div>
       <h1 className="cocktail-heading">Vodka Cocktails</h1>
-      {!isHidden && <Popup cocktail={cocktail} setHidden={setHidden}/>}
+      <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setHidden}/>
       {/* {!isHidden && <RandomCocktail cocktail={cocktail} />} */}
 
       <ul className="cocktail-list">

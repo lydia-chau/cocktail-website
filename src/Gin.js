@@ -34,7 +34,7 @@ export default function Gin() {
     return (
         <div>
             <h1 className='cocktail-heading'>Gin Cocktails</h1>
-            {!isHidden && <Popup cocktail={cocktail} setHidden={setGinHidden}/>}
+            <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setGinHidden}/>
             <ul className ='cocktail-list'>
             {sortList(ginList).map((item,index)=>{
                 return(

@@ -36,7 +36,7 @@ export default function Rum() {
   return (
     <div>
       <h1 className="cocktail-heading">Rum Cocktails</h1>
-      {!isHidden && <Popup cocktail={cocktail} setHidden={setRumHidden}/>}
+      <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setRumHidden}/>
       <ul className="cocktail-list">
         {sortList(rumList).map((item, index) => {
           return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</a>;

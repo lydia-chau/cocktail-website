@@ -34,7 +34,8 @@ export default function Tequila() {
      return (
          <div>
              <h1 className='cocktail-heading'>Tequila Cocktails</h1>
-             {!isHidden && <Popup cocktail={cocktail} setHidden={setTequilaHidden}/>}
+              <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setTequilaHidden}/>
+
              <ul className ='cocktail-list'>
              {sortList(tequilaList).map((item,index)=>{
                  return(

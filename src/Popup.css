@@ -8,14 +8,18 @@
     border-radius: 4.86vw;
 }
 
+.hidden{
+    display:none;
+}
+
 .popup-header{
+    
     font-size:3.47vw;
-    padding:0.69vw;
-    padding-top:3.08vw;
+    padding:0.89vw;
+    margin-top:3vw;
     text-align:center;
     background-color: #95404c;
     border-radius: 4.86vw;
-
 }
 
 /* 
@@ -37,3 +41,43 @@
 [class*="close-icon"]:hover{
     cursor:pointer;
 }
+
+
+.slidein {
+    animation-duration: 0.5s;
+    animation-name: slidein;
+    animation-timing-function: ease-out;
+
+  }
+
+  .slideout {
+    animation-duration: 0.5s;
+    animation-name: slideout;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left:100%;
+      opacity: 50%;
+    }
+  
+    to {
+      margin-left:0%;
+      opacity: 100%;
+    }
+  }
+
+  @keyframes slideout {
+    from {
+      margin-left:0%;
+      opacity: 100%;
+    }
+  
+    to {
+      margin-left:100%;
+      opacity: 50%;
+    }
+  }
