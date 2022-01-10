@@ -21,12 +21,24 @@ export default function Popup(props) {
     },[props.cocktail])
 
     return (
+        <>
+        
+
         <div className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}>
-          
             <CloseIcon className='close-icon-popup' onClick={()=>closeIconClicked()}/>
             
-            <div className='popup-header'>{props.cocktail}</div>
+            <div className='popup-header'>{props.cocktail}
+            {/* <br />
+            <img 
+            alt='cocktail' 
+            className ='popup-image'
+            // className ='cocktail-image-home'
+            // className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}
+            src={cocktailDetails.strDrinkThumb}></img> */}
+            </div>
+            
             <RandomCocktail cocktail={cocktailDetails} homepage={false} popup={true}/>
         </div>
+        </>
     )
 }

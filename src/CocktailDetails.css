@@ -40,10 +40,22 @@
     font-size:1.38vw;
     background-color: transparent;
     margin:3.47vw;
+    margin-top:0;
     overflow-y: scroll;
     position: absolute;
     height: 65%;
 }
+
+.popup-image{
+    /* position:fixed;
+    left:40%;
+    bottom:50%; */
+    width:14.7vw;
+    height:14.7vw;
+    object-fit: cover;
+    border-radius:50%;
+    align-self: center;
+  }
 
 .drink-ingredients{
     background-color: transparent;
