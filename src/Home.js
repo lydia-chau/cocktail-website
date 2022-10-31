@@ -15,7 +15,7 @@ export default function Home() {
       setRandomHidden(false);
       Axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php").then(
         (response) => {
-          setCocktail(response.data.drinks[0]);
+          setCocktail(response.data?.drinks[0]);
           // console.log(cocktail);
         }
       );

@@ -3,18 +3,11 @@ import "./App.css";
 import { BrowserRouter as Router,Routes, Route} from "react-router-dom";
 import Navbar from "./Navbar.js";
 import Home from "./Home.js";
-import Vodka from "./Vodka.js";
-import Gin from "./Gin.js";
-import Whiskey from "./Whiskey.js";
-import Tequila from "./Tequila.js";
-import Rum from "./Rum.js";
-import Brandy from "./Brandy.js";
-import Vermouth from './Vermouth.js'
 import AllCocktails from "./AllCocktails";
 import SearchedCocktail from './SearchedCocktail'
+import Liquor from "./Liquor";
 
 function App() {
-
   return (
     <>
       <Router>
@@ -23,13 +16,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/all" element={<AllCocktails />} />
             <Route path='/searched' element={<SearchedCocktail />} />
-            <Route path="/vodka" element={<Vodka />} />
-            <Route path="/gin" element={<Gin />} />
-            <Route path="/tequila" element={<Tequila />} />
-            <Route path="/whiskey" element={<Whiskey />} />
-            <Route path="/brandy" element={<Brandy />} />
-            <Route path="/rum" element={<Rum />} />
-            <Route path="/vermouth" element={<Vermouth />} />
+            <Route path="/vodka" element={<Liquor alcohol="Vodka" />} />
+            <Route path="/gin" element={<Liquor alcohol="Gin" />} />
+            <Route path="/tequila" element={<Liquor alcohol="Tequila" />} />
+            <Route path="/whiskey" element={<Liquor alcohol="Whiskey" />} />
+            <Route path="/brandy" element={<Liquor alcohol="Brandy" />} />
+            <Route path="/rum" element={<Liquor alcohol="Rum"/>} />
+            <Route path="/vermouth" element={<Liquor alcohol="Vermouth" />} />
+            {/* <Route element={<PageNotFound />} /> */}
 
           </Routes>
       </Router>
