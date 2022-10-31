@@ -21,11 +21,7 @@ function App() {
             <Route path="/tequila" element={<Liquor alcohol="Tequila" />} />
             <Route path="/whiskey" element={<Liquor alcohol="Whiskey" />} />
             <Route path="/brandy" element={<Liquor alcohol="Brandy" />} />
-
-            {/* <Route path="/brandy" element={<Brandy />} /> */}
             <Route path="/rum" element={<Liquor alcohol="Rum"/>} />
-            {/* <Route path="/rum" element={<Rum />} /> */}
-
             <Route path="/vermouth" element={<Liquor alcohol="Vermouth" />} />
             {/* <Route element={<PageNotFound />} /> */}
 
