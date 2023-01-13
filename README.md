@@ -1,5 +1,6 @@
 # Everything Cocktails Website
 The Everthing Cocktails Website is coded with React Javascript and made use of a cocktail database from https://www.thecocktaildb.com/ to provide information about a variety of cocktails including ingredients and preparation instructions.
+NOTE: I wanted to play around with user interactions on web browsers so the mobile version of page was not added into consideration.
 
 Visit https://www.figma.com/file/FBuZUw4KWXO2lFsN3aRSyP/Cocktails-Website?node-id=180%3A737 for Figma Designs that the app (mostly) followed
 
