@@ -2,7 +2,7 @@
     position:sticky;
     top:0;
     height:5.55vw;
-    font-size: 1.38vw;
+    font-size: 16px;
     display:flex;
     justify-content: space-between;
     align-items:center;
@@ -11,8 +11,8 @@
 }
 
 .nav-head{
-    font-size:2.43vw;
-    padding-left:1.04vw;
+    font-size:24px;
+    padding-left:20px;
     text-decoration: none;
     color:white;
     background-color: transparent;
@@ -38,12 +38,18 @@
 
 }
 
-.nav-links:hover{
+.nav-links:hover:not(.active-ham){
     color: #94504C;
     transition: all 200ms ease-out;
 }
 
+/*** for hamburger menu active link***/
 .active{
+  color: #3B0D11;
+}
+
+/*** for navbar active link***/
+.active:not(.active-ham){
     color:#94504C;
 }
 
@@ -153,6 +159,49 @@
         opacity:0%;
         transform: translate(50%); 
       }
-    
+  }
+
+  .hamburger-menu{
+    position:fixed;
+    right:0;
+    padding:20px;
+    margin:20px;
+    border-radius: 25px;
+    background-color: #94504C;
+    cursor:pointer;
+  }
+
+  .hamburger-div{
+    position: fixed;
+    right:0;
+    padding:20px;
+    border-radius:25px;
+    top:100px;
+    font-size: 36px;
+    margin-right:20px;
+    background-color: #94504C;
+  }
+
+  .hamburger-list li{
+    background-color: #94504C;
+    list-style-type: none;
+  }
+
+  .active-ham{
     
   }
+
+  @media screen and (max-width:768px){
+    .navbar-menu{
+      display:none;
+    }
+  }
+
+@media screen and (min-width:768px) {
+    .hamburger-menu{
+      display : none !important;
+    }
+    .hamburger-div{
+      display: none;
+    }
+}
