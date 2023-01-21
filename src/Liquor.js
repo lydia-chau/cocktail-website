@@ -81,7 +81,6 @@ export default function Liquor(props) {
     setLiquorHidden(true);
     Axios.all(getUrl(props.alcohol)
     ).then(Axios.spread((...response) => {
-      console.log(response)
       var oldList = []
       for(const dataObj of Object.values(response)){
         oldList = oldList.concat(dataObj.data.drinks)        
@@ -93,7 +92,9 @@ export default function Liquor(props) {
 
   return (
     <div>
-      <h1 className="cocktail-heading">{props.alcohol} Cocktails</h1>
+      <h1 className="cocktail-heading">{props.alcohol}</h1>
+      <h1 className="cocktail-heading"> Cocktails</h1>
+
       <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setLiquorHidden}/>
       <ul className="cocktail-list">
         {sortList(liquorList).map((item, index) => {

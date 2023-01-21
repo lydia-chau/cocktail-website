@@ -3,6 +3,7 @@ import { MenuItems } from "./MenuItems.js";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
+import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import "./Navbar.css";
 import Axios from "axios";
 
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [searchClicked, setClicked]=useState(false);
   const [showInput, setInput] = useState(false);
   const [focused, setFocused] = useState(false);
+  const [hamShow, setHamShow] = useState(false)
   // let emptyArr = [];
   const [finalList, setFinal] = useState([]);
   const [search, setSearch] = useState("");
@@ -146,103 +148,123 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar-menu">
-      <a className="nav-head" href="/">
-        Everything Cocktails
-      </a>
+    <>
+      <nav className="navbar-menu">
+        <a className="nav-head" href="/">
+          Everything Cocktails
+        </a>
 
-      {/* SEARCH BAR AND DROPDOWN */}
+        {/* SEARCH BAR AND DROPDOWN */}
 
-      {/* NAV BAR LINKS */}
-      <ul className="nav-items">
-        <div>
-          <div className="search-group">
-            {/* {showInput && ( */}
-              <form className="form-input" onSubmit={formSubmit}>
-                <input
-                  onClick={() => focusedClicked()}
-                  onBlur={() => setFocused(false)}
-                  className={searchClicked && showInput? 'input-bar input-slide-in ': searchClicked ? 'input-bar input-slide-out': 'hidden'}
-                  type="text"
-                  placeholder="search cocktails"
-                  value={search}
-                  onChange={(e) => inputChanged(e.target.value)}
-                ></input>
-              </form>
-             {/* )}  */}
+        {/* NAV BAR LINKS */}
+        <ul className="nav-items">
+          <div>
+            <div className="search-group">
+              {/* {showInput && ( */}
+                <form className="form-input" onSubmit={formSubmit}>
+                  <input
+                    onClick={() => focusedClicked()}
+                    onBlur={() => setFocused(false)}
+                    className={searchClicked && showInput? 'input-bar input-slide-in ': searchClicked ? 'input-bar input-slide-out': 'hidden'}
+                    type="text"
+                    placeholder="search cocktails"
+                    value={search}
+                    onChange={(e) => inputChanged(e.target.value)}
+                  ></input>
+                </form>
+              {/* )}  */}
 
-            {showInput? 
-            <CloseIcon 
-              className="dropdown-links"
-              onClick={()=> setInput(!showInput)} />
-            : 
-            <SearchIcon
-              className="dropdown-links"
-              onClick={() => {setInput(!showInput); setClicked(true)}}
-            />}
+              {showInput? 
+              <CloseIcon 
+                className="dropdown-links"
+                onClick={()=> setInput(!showInput)} />
+              : 
+              <SearchIcon
+                className="dropdown-links"
+                onClick={() => {setInput(!showInput); setClicked(true)}}
+              />}
 
-            
-          </div>
-
-          {(focused || dropdownOpened) && (
-            <div ref={ref} >
-              <ul className="dropdown">
-                {alphabeticalList(search, filteredCocktails).slice(0, 5)
-                  .map((cocktail, i) => {
-                    return (
-                      <li key={i} className="dropdown-list">
-                        {/* NAV LINKS TO COCKTAILS IN DROPDOWN */}
-                        <NavLink
-                          onClick={() => setOpened(false)}
-                          to="/searched"
-                          state={{
-                            cocktail: cocktail,
-                            prevPath: location.pathname,
-                            // homepage: false,
-                          }}
-                          className="dropdown-links"
-                        >
-                          {cocktail.strDrink}
-                        </NavLink>
-                      </li>
-                    );
-                  })}
-
-                {/* SHOW MORE LINK */}
-                <li key={"show-more"} className="dropdown-list">
-                  <NavLink
-                    onClick={() => setOpened(false)}
-                    className="dropdown-links"
-                    to="/all"
-                    state={{
-                      filteredCocktails: alphabeticalList(
-                        search,
-                        sortList(filteredCocktails)
-                      ),
-                      search: search,
-                    }}
-                  >
-                    ...show more
-                  </NavLink>
-                </li>
-              </ul>
+              
             </div>
-          )}
-        </div>
+
+            {(focused || dropdownOpened) && (
+              <div ref={ref} >
+                <ul className="dropdown">
+                  {alphabeticalList(search, filteredCocktails).slice(0, 5)
+                    .map((cocktail, i) => {
+                      return (
+                        <li key={i} className="dropdown-list">
+                          {/* NAV LINKS TO COCKTAILS IN DROPDOWN */}
+                          <NavLink
+                            onClick={() => setOpened(false)}
+                            to="/searched"
+                            state={{
+                              cocktail: cocktail,
+                              prevPath: location.pathname,
+                              // homepage: false,
+                            }}
+                            className="dropdown-links"
+                          >
+                            {cocktail.strDrink}
+                          </NavLink>
+                        </li>
+                      );
+                    })}
+
+                  {/* SHOW MORE LINK */}
+                  <li key={"show-more"} className="dropdown-list">
+                    <NavLink
+                      onClick={() => setOpened(false)}
+                      className="dropdown-links"
+                      to="/all"
+                      state={{
+                        filteredCocktails: alphabeticalList(
+                          search,
+                          sortList(filteredCocktails)
+                        ),
+                        search: search,
+                      }}
+                    >
+                      ...show more
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <NavLink
+                  className={item.cname}
+                  activeClassName="active"
+                  to={item.url}
+                >
+                  {item.title}
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <MenuBookRoundedIcon className = "hamburger-menu" onClick={()=>setHamShow(!hamShow)}/> 
+      {!!hamShow && <div className = "hamburger-div">
+        <ul className = "hamburger-list">
         {MenuItems.map((item, index) => {
-          return (
-            <li key={index}>
-              <NavLink
-                className={item.cname}
-                activeClassName="active"
-                to={item.url}
-              >
-                {item.title}
-              </NavLink>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+            return (
+              <li key={index}>
+                <NavLink
+                  className={`${item.cname} active-ham`}
+                  activeClassName="ham-active"
+                  to={item.url}
+                >
+                  {item.title}
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </div>}
+    </>
   );
 }
