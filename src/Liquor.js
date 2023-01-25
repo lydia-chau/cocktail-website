@@ -17,7 +17,6 @@ export default function Liquor(props) {
     return sortedList
   }
   function cocktailClicked(cocktail) {
-    console.log("cocktail clicked " + cocktail);
     setCocktail(cocktail);
     setLiquorHidden(false);
 }
@@ -79,16 +78,23 @@ export default function Liquor(props) {
   }
   useEffect(() => {
     setLiquorHidden(true);
-    Axios.all(getUrl(props.alcohol)
-    ).then(Axios.spread((...response) => {
-      var oldList = []
-      for(const dataObj of Object.values(response)){
-        oldList = oldList.concat(dataObj.data.drinks)        
-      }
-      setList(oldList)      
-    }));
-
+    Axios.all(getUrl(props.alcohol))
+      .then(
+        Axios.spread((...response) => {
+          var oldList = [];
+          for (const dataObj of Object.values(response)) {
+            oldList = oldList.concat(dataObj.data.drinks);
+          }
+          setList(oldList);
+        })
+      )
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response);
+        }
+      });
   }, [props.alcohol]);
+  
 
   return (
     <div>
@@ -96,11 +102,12 @@ export default function Liquor(props) {
       <h1 className="cocktail-heading"> Cocktails</h1>
 
       <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setLiquorHidden}/>
-      <ul className="cocktail-list">
+      {liquorList.length>0 && <ul className="cocktail-list">
         {sortList(liquorList).map((item, index) => {
           return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</a>;
         })}
-      </ul>
+      </ul>}
+      {liquorList.length===0 && <h1 className="cocktail-heading">Oops! We weren't able to grab any drinks. </h1>}
     </div>
   );
 }
