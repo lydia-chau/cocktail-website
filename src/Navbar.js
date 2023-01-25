@@ -247,24 +247,29 @@ export default function Navbar() {
           })}
         </ul>
       </nav>
-      <MenuBookRoundedIcon className = "hamburger-menu" onClick={()=>setHamShow(!hamShow)}/> 
-      {!!hamShow && <div className = "hamburger-div">
-        <ul className = "hamburger-list">
-        {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <NavLink
-                  className={`${item.cname} active-ham`}
-                  activeClassName="ham-active"
-                  to={item.url}
-                >
-                  {item.title}
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      </div>}
+
+      {location.pathname!=='/' && 
+      <>
+        <MenuBookRoundedIcon className = "hamburger-menu" onClick={()=>setHamShow(!hamShow)}/> 
+        {!!hamShow && <div className = "hamburger-div">
+          <ul className = "hamburger-list">
+            <li><NavLink className = "nav-links active-ham" to={"/"}>Homepage</NavLink></li>
+            {MenuItems.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <NavLink
+                      className={`${item.cname} active-ham`}
+                      activeClassName="ham-active"
+                      to={item.url}
+                    >
+                      {item.title}
+                    </NavLink>
+                  </li>
+                );
+              })}
+          </ul>
+        </div>}
+      </>}
     </>
   );
 }
