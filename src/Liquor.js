@@ -20,7 +20,7 @@ export default function Liquor(props) {
     setCocktail(cocktail);
     setLiquorHidden(false);
 }
-
+  
   function getUrl(alcohol){
     switch (alcohol){
       case "Vodka":
@@ -76,6 +76,8 @@ export default function Liquor(props) {
 
     }
   }
+
+  //maybe use useMemo for getUrl!!
   useEffect(() => {
     setLiquorHidden(true);
     Axios.all(getUrl(props.alcohol))
