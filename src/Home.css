@@ -13,6 +13,7 @@ html *{
 .body{
   margin:30px;
   margin-top:50px;
+  overflow-x: hidden;
 }
 
 .App-header{
