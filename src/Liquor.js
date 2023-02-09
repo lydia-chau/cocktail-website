@@ -7,6 +7,7 @@ export default function Liquor(props) {
   const [liquorList, setList] = useState([]);
   const [isHidden, setLiquorHidden] = useState(true);
   const [cocktail, setCocktail] = useState('')
+  const [error, setError] = useState(false);
 
   function sortList(list){
     //maybe later remove duplicates here
@@ -36,7 +37,7 @@ export default function Liquor(props) {
         ]
       case "Tequila":
         return [Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila')]
-      
+
       case "Whiskey":
         return [
           Axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whiskey"),
@@ -80,17 +81,23 @@ export default function Liquor(props) {
   //maybe use useMemo for getUrl!!
   useEffect(() => {
     setLiquorHidden(true);
+    setError(false);
     Axios.all(getUrl(props.alcohol))
       .then(
         Axios.spread((...response) => {
           var oldList = [];
           for (const dataObj of Object.values(response)) {
-            oldList = oldList.concat(dataObj.data.drinks);
+            if(dataObj.data.drinks){
+              oldList = oldList.concat(dataObj.data.drinks);
+            }else{
+              setError(true)
+            }
           }
           setList(oldList);
         })
       )
       .catch(function (error) {
+        setError(true);
         if (error.response) {
           console.log(error.response);
         }
@@ -109,7 +116,9 @@ export default function Liquor(props) {
           return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</a>;
         })}
       </ul>}
-      {liquorList.length===0 && <h1 className="cocktail-heading">Oops! We weren't able to grab any drinks. </h1>}
+      {!error && liquorList.length===0 && <h1 className="cocktail-heading">Loading... </h1>}
+
+      {error && <h1 className="cocktail-heading">Oops! We weren't able to grab some of the drinks you were looking for. </h1>}
     </div>
   );
 }
