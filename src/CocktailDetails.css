@@ -43,7 +43,7 @@
     margin-top:0;
     overflow-y: scroll;
     position: absolute;
-    height: 65%;
+    height: 75%;
 }
 
 .popup-image{
@@ -76,3 +76,18 @@
     margin-top:1.5vw;
     margin-right:1.5vw;
 }
+
+@media screen and (max-width: 768px){
+    /* .popup-box{
+      width: 60%;
+      left: 20%;
+    } */
+    .drink-details-popup{
+        font-size: 5vw;
+        margin-top: 30px;
+    }
+    .popup-image{
+        width:24vw;
+        height:auto;
+    }
+  }

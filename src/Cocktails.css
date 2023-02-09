@@ -27,3 +27,12 @@
     transition: ease-out 300ms;
 }
 
+@media screen and (max-width: 768px) {
+    .cocktail-heading{
+        font-size: 60px;
+    }
+    
+    .cocktail-name{
+        font-size:40px;
+    }
+}
