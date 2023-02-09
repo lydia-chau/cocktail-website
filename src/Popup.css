@@ -81,3 +81,15 @@
       opacity: 50%;
     }
   }
+
+
+  @media screen and (max-width: 768px){
+    .popup-box{
+      width: 60%;
+      left: 20%;
+    }
+
+    .popup-header{
+      font-size: 5vw;
+    }
+  }
