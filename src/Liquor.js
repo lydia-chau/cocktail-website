@@ -114,7 +114,7 @@ export default function Liquor(props) {
       <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setLiquorHidden}/>
       {liquorList.length>0 && <ul className="cocktail-list">
         {sortList(liquorList).map((item, index) => {
-          return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</a>;
+          return <button onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</button>;
         })}
       </ul>}
       {!error && liquorList.length===0 && <h1 className="cocktail-heading">Loading... </h1>}

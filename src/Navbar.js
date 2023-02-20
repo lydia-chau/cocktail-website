@@ -195,7 +195,6 @@ export default function Navbar() {
               <li key={index}>
                 <NavLink
                   className={item.cname}
-                  activeClassName="active"
                   to={item.url}
                 >
                   {item.title}
@@ -217,7 +216,6 @@ export default function Navbar() {
                   <li key={index}>
                     <NavLink
                       className={`${item.cname} active-ham`}
-                      activeClassName="ham-active"
                       to={item.url}
                     >
                       {item.title}

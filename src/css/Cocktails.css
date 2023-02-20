@@ -8,10 +8,12 @@
 
 .cocktail-name{
     display:block;
-    text-decoration: none !important;
+    border-style: none;
+    font-size:80px;
     color:#94504C;
     overflow-wrap:break-word;
-    /* color:rgb(56, 21, 21) */
+    text-align: left;
+    text-decoration: none !important;
 }
 
 .cocktail-heading{

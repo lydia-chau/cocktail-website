@@ -35,7 +35,10 @@
     display: inline-block;
     text-decoration: none;
     background-color: transparent;
+}
 
+.nav-links:active{
+  color:#94504C;
 }
 
 .nav-links:hover:not(.active-ham){
