@@ -4,7 +4,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
-import "./Navbar.css";
+import "./css/Navbar.css";
 import Axios from "axios";
 import {sortList,alphabeticalList} from "./utils";
 

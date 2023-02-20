@@ -2,7 +2,7 @@ import React from 'react'
 import CocktailDetails from './CocktailDetails.js'
 import {randomCocktailApi} from './apiCalls'
 import cocktailImage from './cocktail-homepage.jpg';
-import './Home.css'
+import './css/Home.css'
 // import { display } from '@mui/system';
 
 export default function Home() {

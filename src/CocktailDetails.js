@@ -1,5 +1,5 @@
 import React from 'react'
-import './CocktailDetails.css'
+import './css/CocktailDetails.css'
 import CloseIcon from '@mui/icons-material/Close';
 
 

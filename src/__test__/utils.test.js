@@ -1,4 +1,4 @@
-const {sortList, alphabeticalList} = require("./utils");
+const {sortList, alphabeticalList} = require("../utils");
 
 const entireList = [
     {

@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Liquor from './Liquor';
+import Liquor from '../Liquor';
 import {act, render, screen, waitFor, cleanup, findAllByLabelText} from '@testing-library/react';
 import axios from "axios";
 

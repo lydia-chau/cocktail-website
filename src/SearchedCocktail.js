@@ -1,6 +1,6 @@
 import React from 'react'
-import './CocktailDetails.css'
-import './SearchedCocktail.css'
+import './css/CocktailDetails.css'
+import './css/SearchedCocktail.css'
 import {useLocation} from "react-router-dom";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';

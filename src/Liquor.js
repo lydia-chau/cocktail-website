@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import "./Cocktails.css";
+import "./css/Cocktails.css";
 import Popup from './Popup.js'
 import {sortList} from "./utils"
 

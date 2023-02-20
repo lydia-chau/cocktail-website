@@ -1,9 +1,5 @@
 import React from 'react';
-import Home from './Home';
-
-import {getCocktail} from './Home'
-import {act} from 'react-dom/test-utils'
-import { randomCocktailApi } from './apiCalls';
+import Home from '../Home';
 import {render, screen, cleanup, fireEvent, waitFor} from '@testing-library/react';
 import axios from 'axios';
 import '@testing-library/jest-dom/extend-expect'

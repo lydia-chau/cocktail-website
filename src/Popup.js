@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-import './Popup.css'
+import './css/Popup.css'
 import { chosenCocktailApi } from './apiCalls';
 import RandomCocktail from './CocktailDetails';
 
