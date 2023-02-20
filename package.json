@@ -25,6 +25,14 @@
     "test": "jest",
     "eject": "react-scripts eject"
   },
+  
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    }
+  },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -42,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "jest-transform-stub": "^2.0.0"
   }
 }

@@ -25,16 +25,16 @@ export default function AllCocktails(props) {
             <button onClick={() => navigate('/') }className='back-to-search'><ArrowBackIosIcon />
              Home
             </button>
-             {location.state.search && incomingResults.length>0 && <h1 className="cocktail-heading">{incomingResults.length} Result(s) for '{location.state.search}'</h1> }
+             {location.state.search && incomingResults?.length>0 && <h1 className="cocktail-heading">{incomingResults.length} Result(s) for '{location.state.search}'</h1> }
 
-             {location.state.search && incomingResults.length===0 && <h1 className="cocktail-heading">
+             {location.state.search && incomingResults == null && <h1 className="cocktail-heading">
                  Bummer! 0 Results for '{location.state.search}'. Try searching for cocktails by categories :)
             </h1>}
 
              {!location.state.search && <h1 className="cocktail-heading">All Cocktails</h1>}
 
              <ul className ='cocktail-list'>
-                {incomingResults.length > 0 ? 
+                {incomingResults?.length > 0 ? 
                 incomingResults.map((item,index)=>{
                     return(
                         <NavLink to="/searched"

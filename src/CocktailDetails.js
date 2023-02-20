@@ -4,7 +4,8 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function RandomCocktail(props) {
-    const cocktail=props.cocktail
+    const cocktail=props.cocktail;
+    const error = props.error;
     const ingredientsObject={};
     const portionsArray=[]
 
@@ -54,12 +55,10 @@ export default function RandomCocktail(props) {
         )}
 
         {props.homepage && <h1 className='cocktail-detail-name'>{cocktail.strDrink}</h1>}
-        <div className={props.popup ? "drink-details-popup" : "drink-details"}>
+        {!error ? <div className={props.popup ? "drink-details-popup" : "drink-details"}>
             {!props.homepage && <img 
             alt='cocktail' 
             className ='popup-image'
-            // className ='cocktail-image-home'
-            // className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}
             src={cocktail.strDrinkThumb}></img>}
             <br />
           <ul className='drink-ingredients'>
@@ -71,11 +70,7 @@ export default function RandomCocktail(props) {
           </ul>
           <br />
           <div className="instructions">{cocktail.strInstructions}</div>
-        </div>
+        </div> : <div className='popup-header'>Oops! Something went wrong</div>}
       </>
-
-      //     </div>
-
-      // </div>
     );
 }

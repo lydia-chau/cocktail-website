@@ -1,24 +1,25 @@
 import React from 'react'
-import { useState } from "react";
 import CocktailDetails from './CocktailDetails.js'
-import Axios from "axios";
+import {randomCocktailApi} from './apiCalls'
 import cocktailImage from './cocktail-homepage.jpg';
 import './Home.css'
 // import { display } from '@mui/system';
 
 export default function Home() {
-    const [cocktail, setCocktail] = useState("");
-    const [randomHidden,setRandomHidden]=useState(false);
-
-    const getCocktail = () => {
-      console.log(randomHidden);
+    const [cocktail, setCocktail] = React.useState("");
+    const [randomHidden,setRandomHidden]=React.useState(true);
+    const [error, setError]=React.useState(false)
+    
+    const getCocktail = async() => {
       setRandomHidden(false);
-      Axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php").then(
-        (response) => {
-          setCocktail(response.data?.drinks[0]);
-          // console.log(cocktail);
-        }
-      );
+      setError(false);
+    
+      try{
+        const apiResponse = await randomCocktailApi();
+        setCocktail(apiResponse.data.drinks[0])
+      }catch{
+        setError(true);
+      }
     };
     return (
       <div className="App">
@@ -30,9 +31,10 @@ export default function Home() {
             <img className='cocktail-homepage-image' alt='cocktail_image' src={cocktailImage}></img>
             
             <br />
-            <button className="generate-button" onClick={getCocktail}>
+            <button data-testid = "generate-button" className="generate-button" onClick={getCocktail}>
               Generate Random Cocktail
             </button>
+            {error && <p className='header-slide-in'>Oops! something went wrong, please try again later :(</p>}
             
           </header>
 

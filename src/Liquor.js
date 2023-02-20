@@ -97,6 +97,7 @@ export default function Liquor(props) {
         if (error.response) {
           console.log(error.response);
         }
+        return []
       });
     }
 

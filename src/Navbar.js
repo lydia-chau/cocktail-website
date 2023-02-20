@@ -69,12 +69,10 @@ export default function Navbar() {
         for (var j = 0; j < 36; j++) {
           finalArray.push(responseArr[j].data.drinks);
         }
-        // console.log('final array: ', finalArray)
         let anotherArray = [];
         for (var z = 0; z < 36; z++) {
           if (finalArray[z] !== null) {
             anotherArray.push(...finalArray[z]);
-            // console.log(anotherArray)
           }
         }
         setFinal(anotherArray.splice(0));
