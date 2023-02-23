@@ -3,7 +3,6 @@ import axios from 'axios';
 import '@testing-library/jest-dom/extend-expect'
 
 jest.mock('axios')
-
 describe('testing api calls',()=>{
     test ('receives a random cocktail upon calling randomCocktailApi',async ()=>{
         //setup

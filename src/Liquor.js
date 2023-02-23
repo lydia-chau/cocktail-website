@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Axios from "axios";
 import "./css/Cocktails.css";
 import Popup from './Popup.js'
 import {sortList} from "./utils"
 
 export default function Liquor(props) {
-  const [liquorList, setList] = useState([]);
-  const [isHidden, setLiquorHidden] = useState(true);
-  const [cocktail, setCocktail] = useState('')
-  const [error, setError] = useState(false);
+  const [liquorList, setList] = React.useState([]);
+  const [isHidden, setLiquorHidden] = React.useState(true);
+  const [cocktail, setCocktail] = React.useState('')
+  const [error, setError] = React.useState(false);
 
   const cocktailClicked = (cocktail) => {
     setCocktail(cocktail);

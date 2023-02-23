@@ -5,9 +5,9 @@ import { chosenCocktailApi } from './apiCalls';
 import RandomCocktail from './CocktailDetails';
 
 export default function Popup(props) {
-    const [cocktailDetails, setDetails]=useState([])
-    const [close, setClose] =useState(false)
-    const [error, setError] = useState(false)
+    const [cocktailDetails, setDetails]=React.useState([])
+    const [close, setClose] = React.useState(false)
+    const [error, setError] = React.useState(false)
 
     function closeIconClicked(){
         setClose(!close)
@@ -30,12 +30,10 @@ export default function Popup(props) {
 
     return (
         <>
-        
-
         <div className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}>
-            <CloseIcon className='close-icon-popup' onClick={()=>closeIconClicked()}/>
+            <CloseIcon data-testid = 'close-button' className='close-icon-popup' onClick={()=>closeIconClicked()}/>
             
-            <div className='popup-header'>{props.cocktail}
+            <div data-testid = 'popup-header' className='popup-header'>{props.cocktail}
             </div>
             
             <RandomCocktail cocktail={cocktailDetails} homepage={false} popup={true} error={error}/>
