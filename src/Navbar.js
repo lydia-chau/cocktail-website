@@ -194,7 +194,7 @@ export default function Navbar() {
             return (
               <li key={index}>
                 <NavLink
-                  className={item.cname}
+                  className='nav-links'
                   to={item.url}
                 >
                   {item.title}
@@ -215,7 +215,7 @@ export default function Navbar() {
                 return (
                   <li key={index}>
                     <NavLink
-                      className={`${item.cname} active-ham`}
+                      className={`nav-links active-ham`}
                       to={item.url}
                     >
                       {item.title}
