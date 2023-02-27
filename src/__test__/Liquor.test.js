@@ -1,16 +1,52 @@
 import React from 'react';
 import Liquor from '../Liquor';
-import Popup from '../Popup'
+import '@testing-library/jest-dom'
 import {act, render, screen, waitFor, cleanup, findAllByLabelText} from '@testing-library/react';
 import axios from "axios";
 
-afterEach(cleanup);
-
 jest.mock("axios")
+jest.mock('../Popup.js',()=>'div')
 
-describe.skip('async axios request works',()=>{
-    
+describe('Liquor test',()=>{
+    afterEach(()=>cleanup);
+
+    beforeEach(()=>{
+      window.scrollTo = jest.fn();
+      jest.clearAllMocks();
+
+    })
+
+    test('Heading shows type of liquor that is passed to props',()=>{
+      //setup
+      axios.all = jest.fn().mockReturnValue(new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('mockData');
+        }, 300);
+      }));
+      axios.spread = jest.fn();
+
+      //act
+      render(<Liquor alcohol = "Tequila"/>)
+
+      //expect
+      expect(screen.getByText('Tequila')).toBeInTheDocument();
+    })
+
+    test('error message shown if no drinks are retrieved',async()=>{
+      //setup
+
+      axios.all.mockReturnValue(Promise.reject('mockData'));
+
+      //act
+      await act(async ()=>render(<Liquor alcohol = "Brandy"/>))
+
+      //expect
+      expect(screen.getByText("Oops! We weren't able to grab some of the drinks you were looking for.")).toBeInTheDocument();
+
+    })
+
     test('renders cocktail list when API call succeeds', async () => {
+      //setup
         const mockData = [
             {
                 "data": {
@@ -307,40 +343,27 @@ describe.skip('async axios request works',()=>{
               idDrink: '15423'
             }
         ]
-
         axios.get.mockResolvedValueOnce(mockData);
-        
-        //ISSUE: SPREAD DOESN'T RETURN, SHOULD MOCK IMPLEMENTATION AND USE SETSTATE?
-        // axios.spread.mockReturnValue(mockReturnList);
-        // axios.spread.mockImplementation(()=>React.useState(mockReturnList))
+        axios.all = jest.fn().mockImplementation(()=>{
+          return Promise.resolve(mockData);
+        })
+        axios.spread = jest.fn().mockImplementation(()=>{
+          setState(mockReturnList)
+        })
 
         const setState = jest.fn();
         const useStateSpy = jest.spyOn(React, 'useState')
         useStateSpy.mockImplementation((init) => [init, setState]);
-
-
-        const noop = () => {};
-        Object.defineProperty(window, 'scrollTo', { value: noop, writable: true });
-
-        jest.mock("../Popup", () => (
-            <div>
-            </div>
-        ));
-          
-
-        const {getByText} = render(<Liquor alcohol="Tequila"/>)
         
+        //act
+        await act(async ()=>{render(<Liquor alcohol="Tequila"/>)})
+
+        //expect
         expect(axios.get).toHaveBeenCalledTimes(1);
         expect(axios.get).toHaveBeenCalledWith(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila`);
         expect(axios.all).toHaveBeenCalledTimes(1);
-        await expect (axios.get).resolves.toBe(axios.all)
         expect(axios.spread).toHaveBeenCalledTimes(1);
-
         await waitFor(() => expect(setState).toHaveBeenCalledTimes(3));
         await waitFor(() => expect (setState).toHaveBeenCalledWith(mockReturnList))
-        // await waitFor(()=> expect(getByText("110 in the shade")).toBeInTheDocument())
     })
-
-    // test('renders error when API call fails', async () => {})
-
 })

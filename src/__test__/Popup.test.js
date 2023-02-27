@@ -5,12 +5,13 @@ import '@testing-library/jest-dom/extend-expect';
 import axios from "axios";
 
 jest.mock('axios')
-afterEach(cleanup)
 
 describe('Popup',()=>{
+    afterEach(cleanup)
+
     test('renders Popup correctly',()=>{
         //act
-        const {getByTestId}=act(()=>render(<Popup cocktail = "Tequila Sunrise" isHidden = {false}/>));
+        render(<Popup cocktail = "Tequila Sunrise" isHidden = {false}/>);
 
         //expect
         expect(screen.getByTestId('popup-header')).toHaveTextContent('Tequila Sunrise')
@@ -47,7 +48,7 @@ describe('Popup',()=>{
         //act
         await act( async ()=>render (<Popup cocktail = "Bloody Mary" isHidden = {false} setHidden = {setHidden}/>))
         const closeButton = screen.getByTestId('close-button');
-        fireEvent.click(closeButton);
+        act(()=>{fireEvent.click(closeButton)});
 
         //expect
         expect(screen.getByTestId('popup-header')).toHaveTextContent('Bloody Mary')

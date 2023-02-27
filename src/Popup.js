@@ -1,11 +1,11 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import './css/Popup.css'
 import { chosenCocktailApi } from './apiCalls';
 import RandomCocktail from './CocktailDetails';
 
 export default function Popup(props) {
-    const [cocktailDetails, setDetails]=React.useState([])
+    const [cocktailDetails, setDetails]= React.useState([])
     const [close, setClose] = React.useState(false)
     const [error, setError] = React.useState(false)
 

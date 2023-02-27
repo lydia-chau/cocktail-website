@@ -4,9 +4,9 @@ import {render, screen, cleanup, fireEvent, waitFor} from '@testing-library/reac
 import axios from 'axios';
 import '@testing-library/jest-dom/extend-expect'
 
-afterEach(cleanup);
 
 describe("Home",()=>{
+    afterEach(cleanup);
 
     const fakeRandomCocktail = {
         "data":{

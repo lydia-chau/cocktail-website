@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 describe('Cocktail Details',()=>{
     afterEach(cleanup)
+    
     test('Cocktail name appears as header if component is rendered on homepage',()=>{
         //setup
         const mockCocktailObj = {
