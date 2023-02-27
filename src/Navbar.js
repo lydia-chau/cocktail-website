@@ -15,7 +15,6 @@ export default function Navbar() {
   const [showInput, setInput] = useState(false);
   const [focused, setFocused] = useState(false);
   const [hamShow, setHamShow] = useState(false)
-  // let emptyArr = [];
   const [finalList, setFinal] = useState([]);
   const [search, setSearch] = useState("");
   let location = useLocation();

@@ -24032,7 +24032,6 @@ describe ("testing sorting lists functions", ()=>{
     })
     
     test("returns list of objects when no search string",()=>{
-        // expect(alphabeticalList("vam", mockObjectList).strDrink).toBe("Vampiro")
         expect(alphabeticalList(null, entireList)).toStrictEqual(entireList)
     })
     

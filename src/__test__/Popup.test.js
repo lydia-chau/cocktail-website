@@ -29,9 +29,6 @@ describe('Popup',()=>{
             },
             "status": 200
         }
-        // const setState = jest.fn();
-        // const useStateSpy = jest.spyOn(React, 'useState')
-        // useStateSpy.mockImplementation((init) => [init, setState]);
 
         axios.get.mockResolvedValue(fakeCocktail);
 
@@ -56,8 +53,6 @@ describe('Popup',()=>{
         expect(setError).toHaveBeenCalledWith(false);
         expect(setClose).toHaveBeenCalledWith(true);
         expect(setHidden).toHaveBeenCalledWith(true);
-        // await waitFor(()=>{expect(screen.getByText('slideout')).toBeInTheDocument()});
-
     })
 
     test('axios fails sets setError to true',async ()=>{

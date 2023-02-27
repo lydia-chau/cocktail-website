@@ -34,8 +34,6 @@ describe("Home",()=>{
         await waitFor(() =>  expect(axios.get).toHaveBeenCalledWith("https://www.thecocktaildb.com/api/json/v1/1/random.php"))
         await waitFor(() => expect(setState).toHaveBeenCalledTimes(3));
         await waitFor(() => expect(setState).toHaveBeenCalledWith(fakeRandomCocktail.data.drinks[0]))
-        // expect( await findByText('110 in the shade')).toBeInTheDocument();
-
     })
 
     test('renders error when API call fails', async () => {
@@ -84,10 +82,5 @@ describe("Home",()=>{
         await waitFor(() => expect(setState).toHaveBeenCalledTimes(3));
         await waitFor(() => expect(setState).toHaveBeenCalledWith(true));
         await waitFor(() => expect(setState).not.toHaveBeenCalledWith(fakeRandomCocktail.data.drinks[0]))
-
-        // await waitFor(() => {expect(getByText("Oops! something went wrong, please try again later :(")).toBeInTheDocument()})
-
-        // expect(getByText("Oops! something went wrong, please try again later :(")).toBeInTheDocument();
-
     })
 })

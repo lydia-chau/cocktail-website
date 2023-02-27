@@ -3,7 +3,6 @@ import CocktailDetails from './CocktailDetails.js'
 import {randomCocktailApi} from './apiCalls'
 import cocktailImage from './cocktail-homepage.jpg';
 import './css/Home.css'
-// import { display } from '@mui/system';
 
 export default function Home() {
     const [cocktail, setCocktail] = React.useState("");

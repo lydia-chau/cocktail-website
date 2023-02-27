@@ -6,8 +6,6 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 
 export default function AllCocktails(props) {
-    // let emptyArr=[];
-    // const [finalList, setFinal]=useState([]);
     let location = useLocation();
     let incomingResults=location.state.filteredCocktails;
     const navigate = useNavigate();
@@ -39,7 +37,6 @@ export default function AllCocktails(props) {
                     return(
                         <NavLink to="/searched"
                             state={{cocktail:item, prevPath: location.pathname, filteredCocktails:incomingResults, search: location.state.search, }}
-                            // state={{cocktail:item, prevPath: location.pathname}}
                             onClick={()=>cocktailClicked()}
                             className='cocktail-name'
                             key={index}>

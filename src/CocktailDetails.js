@@ -61,7 +61,6 @@ export default function RandomCocktail(props) {
               return <li className='drink-ingredients' key={index}>{ingredientsObject[key] + " " + key}</li>;
             })}
 
-            {/* <button onClick={getList}></button> */}
           </ul>
           <br />
           <div data-testid = "instructions" className="instructions">{cocktail.strInstructions}</div>
