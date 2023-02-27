@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Axios from "axios";
-import "./Cocktails.css";
+import "./css/Cocktails.css";
 import Popup from './Popup.js'
+import {sortList} from "./utils"
 
 export default function Liquor(props) {
-  const [liquorList, setList] = useState([]);
-  const [isHidden, setLiquorHidden] = useState(true);
-  const [cocktail, setCocktail] = useState('')
-  const [error, setError] = useState(false);
+  const [liquorList, setList] = React.useState([]);
+  const [isHidden, setLiquorHidden] = React.useState(true);
+  const [cocktail, setCocktail] = React.useState('')
+  const [error, setError] = React.useState(false);
 
-  function sortList(list){
-    //maybe later remove duplicates here
-    var sortedList=list.slice(0);
-    sortedList.sort((a,b)=>{
-      return a.strDrink.localeCompare(b.strDrink)
-    })
-    return sortedList
-  }
-  function cocktailClicked(cocktail) {
+  const cocktailClicked = (cocktail) => {
     setCocktail(cocktail);
     setLiquorHidden(false);
 }
@@ -80,9 +73,12 @@ export default function Liquor(props) {
 
   //maybe use useMemo for getUrl!!
   useEffect(() => {
+    window.scrollTo(0, 0);
     setLiquorHidden(true);
     setError(false);
-    Axios.all(getUrl(props.alcohol))
+    
+    function getCocktailApi(){
+      Axios.all(getUrl(props.alcohol))
       .then(
         Axios.spread((...response) => {
           var oldList = [];
@@ -101,7 +97,12 @@ export default function Liquor(props) {
         if (error.response) {
           console.log(error.response);
         }
+        return []
       });
+    }
+
+    getCocktailApi();
+
   }, [props.alcohol]);
   
 
@@ -113,7 +114,7 @@ export default function Liquor(props) {
       <Popup cocktail={cocktail} isHidden={isHidden} setHidden={setLiquorHidden}/>
       {liquorList.length>0 && <ul className="cocktail-list">
         {sortList(liquorList).map((item, index) => {
-          return <a href={() => false} onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</a>;
+          return <button onClick={()=>cocktailClicked(item.strDrink)} className='cocktail-name' key={index}> {item.strDrink}</button>;
         })}
       </ul>}
       {!error && liquorList.length===0 && <h1 className="cocktail-heading">Loading... </h1>}

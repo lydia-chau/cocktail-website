@@ -35,7 +35,10 @@
     display: inline-block;
     text-decoration: none;
     background-color: transparent;
+}
 
+.nav-links:active{
+  color:#94504C;
 }
 
 .nav-links:hover:not(.active-ham){
@@ -49,7 +52,7 @@
 }
 
 /*** for navbar active link***/
-.active:not(.active-ham){
+.active:not(.active-ham):not(.dropdown-links){
     color:#94504C;
 }
 
@@ -111,7 +114,6 @@
 
 .dropdown-links:hover{
   text-decoration: underline !important;
-
 }
 
 .search-group{

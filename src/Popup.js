@@ -1,12 +1,13 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-import './Popup.css'
-import Axios from 'axios';
+import './css/Popup.css'
+import { chosenCocktailApi } from './apiCalls';
 import RandomCocktail from './CocktailDetails';
 
 export default function Popup(props) {
-    const [cocktailDetails, setDetails]=useState([])
-    const [close, setClose]=useState(false)
+    const [cocktailDetails, setDetails]= React.useState([])
+    const [close, setClose] = React.useState(false)
+    const [error, setError] = React.useState(false)
 
     function closeIconClicked(){
         setClose(!close)
@@ -14,30 +15,28 @@ export default function Popup(props) {
     }
 
     useEffect(()=>{
-        Axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+props.cocktail.replace(/ /g,"_")).then((response)=>{
-            // console.log(response.data.drinks[0])
-            setDetails(response.data.drinks[0]);
-        })
+        setError(false)
+        const getChosenCockatail = async () =>{
+            try{
+                const chosenCocktail = await chosenCocktailApi(props.cocktail);
+                setDetails(chosenCocktail.data.drinks[0])
+            } catch (error){
+                console.log(error)
+                setError(true)
+            }
+        }
+        getChosenCockatail();
     },[props.cocktail])
 
     return (
         <>
-        
-
         <div className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}>
-            <CloseIcon className='close-icon-popup' onClick={()=>closeIconClicked()}/>
+            <CloseIcon data-testid = 'close-button' className='close-icon-popup' onClick={()=>closeIconClicked()}/>
             
-            <div className='popup-header'>{props.cocktail}
-            {/* <br />
-            <img 
-            alt='cocktail' 
-            className ='popup-image'
-            // className ='cocktail-image-home'
-            // className={props.isHidden && close ? 'popup-box slideout ' : props.isHidden? 'popup-box hidden' : 'popup-box slidein'}
-            src={cocktailDetails.strDrinkThumb}></img> */}
+            <div data-testid = 'popup-header' className='popup-header'>{props.cocktail}
             </div>
             
-            <RandomCocktail cocktail={cocktailDetails} homepage={false} popup={true}/>
+            <RandomCocktail cocktail={cocktailDetails} homepage={false} popup={true} error={error}/>
         </div>
         </>
     )
